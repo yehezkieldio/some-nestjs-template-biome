@@ -1,0 +1,42 @@
+{
+    "format_on_save": "on",
+    "language_servers": ["biome", "typescript-language-server", "json-language-server"],
+    "lsp": {
+        "biome": {
+            "settings": {
+                "require_config_file": true
+            }
+        }
+    },
+    "formatter": {
+        "language_server": {
+            "name": "biome"
+        }
+    },
+    "languages": {
+        "JSONC": {
+            "language_servers": ["json-language-server"]
+        },
+        "JavaScript": {
+            "language_servers": ["typescript-language-server", "biome"],
+            "format_on_save": "on",
+            "code_actions_on_format": {
+                "source.fixAll.biome": true,
+                "source.organizeImports.biome": true,
+                "source.action.useSortedKeys.biome": true
+            }
+        },
+        "TypeScript": {
+            "language_servers": ["!vtsls", "typescript-language-server", "biome"],
+            "format_on_save": "on",
+            "code_actions_on_format": {
+                "source.fixAll.biome": true,
+                "source.organizeImports.biome": true,
+                "source.action.useSortedKeys.biome": true
+            }
+        }
+    },
+    "file_types": {
+        "JSONC": [".swcrc", ".prettierrc"]
+    }
+}

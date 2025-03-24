@@ -12,8 +12,6 @@ RUN apt-get -y update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-# ---------------------------------------------------------------------------- #
-
 FROM base AS deps
 
 WORKDIR /app
@@ -27,9 +25,6 @@ COPY package.json tsconfig.json tsconfig.build.json .swcrc nest-cli.json ./
 COPY prisma prisma/
 
 RUN bun install
-# RUN bun run db:generate
-
-# ---------------------------------------------------------------------------- #
 
 FROM deps AS builder
 
@@ -38,8 +33,6 @@ WORKDIR /app
 COPY . .
 
 RUN bun run build
-
-# ---------------------------------------------------------------------------- #
 
 FROM base AS runner
 

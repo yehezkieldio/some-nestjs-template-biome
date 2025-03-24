@@ -2,8 +2,7 @@ import { NestFactory } from "@nestjs/core";
 import { DocumentBuilder, SwaggerModule } from "@nestjs/swagger";
 import { apiReference } from "@scalar/nestjs-api-reference";
 import { patchNestJsSwagger } from "nestjs-zod";
-
-import { AppModule } from "./app.module";
+import { AppModule } from "#/app.module";
 
 async function bootstrap(): Promise<void> {
     const app = await NestFactory.create(AppModule, {

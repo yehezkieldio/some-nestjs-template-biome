@@ -106,7 +106,8 @@
         }
     },
     "files": {
-        "ignoreUnknown": false
+        "ignoreUnknown": false,
+        "includes": ["!dist"]
     },
     "javascript": {
         "parser": {
